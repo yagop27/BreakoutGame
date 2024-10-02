@@ -7,13 +7,16 @@ class Paddle(Turtle):
         self.shape("square")
         self.penup()
         self.color("white")
-        self.shapesize(stretch_wid=0.5, stretch_len=3)
+        self.shapesize(stretch_wid=0.75, stretch_len=6)
         self.goto((0, -250))
+        self.speed('fast')
 
     def move_left(self):
-        new_x = self.xcor() - 30
-        self.goto(new_x, self.ycor())
+        if self.xcor() > -350:
+            new_x = self.xcor() - 50
+            self.goto(new_x, self.ycor())
 
     def move_right(self):
-        new_x = self.xcor() + 30
-        self.goto(new_x, self.ycor())
+        if self.xcor() < 350:
+            new_x = self.xcor() + 50
+            self.goto(new_x, self.ycor())
