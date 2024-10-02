@@ -53,14 +53,14 @@ while game_on:
     if 10 < ball.distance(paddle) < 50 and ball.ycor() < -230:  # Detecting collision with the paddle
         ball.bounce_y()
 
-    if ball.ycor() < -280:
+    if ball.ycor() < -280:  # If the ball hit the lower part of the screen it resets the ball and the paddle's position
         sleep(0.5)
         ball.goto((0, -230))
         paddle.goto((0, -250))
         ball.bounce_y()
         sleep(0.5)
 
-    for b in bricks:
+    for b in bricks:  # Checking collision with the bricks
         if ball.distance(b) < 30:
             b.goto(1000, 1000)
             ball.bounce_y()
