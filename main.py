@@ -50,7 +50,7 @@ while game_on:
     if ball.xcor() > 380 or ball.xcor() < -380:  # Detecting collision with the side walls
         ball.bounce_x()
 
-    if 10 < ball.distance(paddle) < 50'' and ball.ycor() < -230:  # Detecting collision with the paddle
+    if 10 < ball.distance(paddle) < 50 and ball.ycor() < -230:  # Detecting collision with the paddle
         ball.bounce_y()
 
     if ball.ycor() < -280:
