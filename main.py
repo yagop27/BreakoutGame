@@ -10,7 +10,7 @@ screen.bgcolor("blue")
 screen.setup(width=800, height=600)
 screen.title("Breakout")
 screen.tracer(0)
-
+turtle = Turtle()
 paddle = Paddle()  # Creating the paddle via the class on the paddle file
 ball = Ball()  # Creating the ball via the class on the ball file
 bricks = []
@@ -41,6 +41,7 @@ def reset_bricks():
 game_level = 0
 game_on = True
 while game_on:
+
     screen.update()
     ball.move()
 
@@ -53,7 +54,8 @@ while game_on:
     if 10 < ball.distance(paddle) < 50 and ball.ycor() < -230:  # Detecting collision with the paddle
         ball.bounce_y()
 
-    if ball.ycor() < -280:  # If the ball hit the lower part of the screen it resets the ball and the paddle's position
+    if ball.ycor() < -280:
+        # If the ball hit the lower part of the screen it resets the ball and the paddle's position
         sleep(0.5)
         ball.goto((0, -230))
         paddle.goto((0, -250))
@@ -75,5 +77,6 @@ while game_on:
         ball.goto((0, -230))
         paddle.goto((0, -250))
         reset_bricks()
+
 
 screen.exitonclick()
